@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    background-color: #333;
+}
+
+.testContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    border-bottom: 3px solid white;
+    color: white;
+}
+
+.test{
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.card{
+    background-color: #222;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+
+@property --angle {
+    syntax : "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#rainbow::after,
+#rainbow::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(147, 214, 147), rgb(199, 214, 147), rgb(214, 155, 147), rgb(178, 147, 214), rgb(147, 204, 214), rgb(147, 214, 147));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 15px;
+    transition: .5s;
+    animation: 2s spin linear infinite;
+}
+
+#rainbow::before {
+    filter: blur(1.5rem);
+    opacity: .5;
+}
+
+#radar::after,
+#radar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(0, 255, 0));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 13px;
+    transition: .5s;
+    animation: 3s spin linear infinite;
+}
+
+#radar::before {
+    filter: blur(1.5rem);
+    opacity: .5;
+}
+
+#fish::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 0% 90%, blue 90% 100%);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 13px;
+    transition: .5s;
+    animation: 2s spin linear infinite;
+}
+
+#double::after,
+#double::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 10%, rgb(153, 0, 255) 35%, transparent 60%, blue 85%, transparent 100%);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 13px;
+    transition: .5s;
+    animation: 2s spin linear infinite;
+}
+
+#double::before {
+    filter: blur(1.5rem);
+    opacity: .5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg
+    }
+    to{
+        --angle: 360deg
+    }
+}

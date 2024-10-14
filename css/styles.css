@@ -1,0 +1,276 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  background-color: #544b66;
+}
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 100px;
+}
+::selection {
+  background-color: black;
+  color: white;
+}
+footer,
+header {
+  overflow: hidden;
+  position: relative;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0);
+  height: 130px;
+  display: flex;
+  padding-left: 50%;
+  align-items: center;
+}
+footer h2::selection,
+header h1::selection {
+  background-color: #fff;
+  color: black;
+}
+header h1 {
+  transform: translate(-50%);
+  margin: 0;
+  color: white;
+}
+
+
+header a {
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  margin-right: 20px;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+  transition: 0.2s;
+  text-decoration: none;
+  color: black;
+}
+
+header ul {
+  margin-right: 80px;
+  position: relative;
+  list-style: none;
+  display: flex;
+}
+main {
+  margin: 0 auto;
+  background-color: white;
+  width: 70%;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+article {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+article h1 {
+  width: 40%;
+  margin: 0;
+  font-size: 4em;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgb(106, 59, 160);
+  transition: 0.5s;
+}
+article h1:hover {
+  color: rgb(106, 59, 160);
+  width: 60%;
+}
+article img {
+  width: 60%;
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+article p {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 2em;
+  margin-bottom: 60px;
+}
+footer h2 {
+  color: white;
+  transform: translate(-50%);
+  font-weight: 50;
+}
+footer ul {
+  list-style: none;
+  z-index: 1;
+}
+footer svg {
+  width: 25px;
+  fill: white;
+  transition: 0.5s;
+}
+footer a {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 0;
+  text-decoration: none;
+  margin-right: 70px;
+}
+footer p {
+  margin: 0;
+  color: white;
+  margin-left: 15px;
+  transition: 0.5s;
+}
+footer a:hover p {
+  color: black;
+}
+footer a:hover svg {
+  fill: black;
+}
+.ball {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #544b66;
+  transition: opacity 0.5s;
+}
+#ballBody {
+  background-color: black;
+  z-index: -1;
+}
+
+@media (max-width: 780px) {
+  header,
+  footer {
+    width: 100vw;
+    padding-left: 0;
+    justify-content: space-between;
+  }
+  header h1,
+  footer h2 {
+    transform: translate(0);
+    margin-left: 20px;
+  }
+  header ul {
+    margin: 0;
+    padding: 0;
+  }
+  header li {
+    margin: 0;
+    font-size: 0.8em;
+    width: 60px;
+    margin-right: 20px;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  footer h2 {
+    font-size: 1em;
+  }
+  main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  article h1 {
+    font-size: 2em;
+  }
+  article img {
+    width: 70%;
+  }
+  article p {
+    font-size: 1.5em;
+    width: 80%;
+    margin-bottom: 0;
+  }
+
+  footer ul {
+    padding: 0;
+  }
+  footer svg {
+    width: 18px;
+  }
+  footer li p {
+    font-size: 0.8em;
+  }
+}
+
+/* CALCULADORA PRIMOS */
+
+#calculator {
+  height: 600px;
+  background-color: #544b66;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#primocalc {
+  display: flex;
+  flex-flow: column;
+}
+
+#primocalc * {
+  margin: 15px auto;
+}
+
+#primocalc label {
+  color: white;
+  font-size: 1.8em;
+  width: 90%;
+  text-align: center;
+}
+
+#primocalc input {
+  padding: 20px;
+}
+
+#primocalc input[type="number"] {
+  width: 70%;
+  background-color: transparent;
+  border: 2px solid #544b66;
+  border-bottom: 2px solid white;
+  font-size: 1em;
+  color: white;
+}
+
+#primocalc input[type="number"]:focus {
+  border: 2px solid white;
+  outline: none;
+}
+
+#primocalc input[type="submit"] {
+  border: 2px solid #fff;
+  background-color: #544b66;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+#primocalc input[type="submit"]:hover {
+  background-color: white;
+  border: 2px solid #544b66;
+  color: black;
+}
+
+#resultado {
+  color: white;
+  font-size: 3em;
+}
+
+#buttons {
+  display: flex;
+  gap: 5px;
+}
