@@ -8,6 +8,40 @@ body {
     display: flex;
     flex-flow: column;
     background-color: #333;
+    min-height: 100vh;
+} 
+
+#back {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 50px;
+    background-color: #222;
+    
+    border-radius: 10px;
+    border: 2px solid white;
+    display: flex;
+    opacity: .5;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+    transition: .2s;
+}
+
+#back:hover {
+    opacity: 1;
+    scale: 1.1;
+}
+
+#back a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    line-height: 50px;
 }
 
 .testContainer {
@@ -51,8 +85,8 @@ body {
     left: 50%;
     translate: -50% -50%;
     z-index: -1;
-    padding: 5px;
-    border-radius: 15px;
+    padding: 8px;
+    border-radius: 18px;
     transition: .5s;
     animation: 2s spin linear infinite;
 }
@@ -89,7 +123,7 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 0% 90%, blue 90% 100%);
+    background-image: conic-gradient(from var(--angle), transparent 0% 90%, rgb(71, 139, 228) 90% 100%);
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -120,6 +154,92 @@ body {
 #double::before {
     filter: blur(1.5rem);
     opacity: .5;
+}
+
+.dot {
+    position: absolute;
+    z-index: -1;
+    width: 5px;
+    height: 5px;
+    font-size: 100%;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.explosion {
+    text-shadow: 5px solid rgba(255, 255, 255, 0.9);
+    font-size: 100px;
+    aspect-ratio: 1;
+    color: rgb(9, 255, 0);
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(5px);
+    animation: explode .55s ;
+    transform: translate(-50%, -50%);
+}
+
+.glow {
+    border: 5px solid rgba(248, 248, 248, 0.9);
+    height: 20px;
+    aspect-ratio: 1;
+    background-color: rgb(0, 255, 13);
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(8px);
+    animation: fade .15s linear;
+}
+
+@keyframes explode {
+    0% {
+        font-size: 0;
+    }
+
+    25% {
+        font-size: 100px;
+    }
+
+    100% {
+        font-size: 130px;
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    100% {
+        opacity: 0;
+        scale: 0.01;
+    }
+}
+
+@keyframes fall1 {
+
+    100% {
+        transform: translateY(100px) rotateX(200deg) rotateY(70deg);
+        opacity: 0;
+        scale: .5;
+    }
+}
+
+@keyframes fall2 {
+
+    100% {
+        transform: translateY(100px) rotateX(200deg) rotateY(-70deg);
+        opacity: 0;
+        scale: .5;
+    }
+}
+
+@keyframes fall3 {
+
+    100% {
+        transform: translateY(100px) rotateX(70deg) rotateY(150deg);
+        opacity: 0;
+        scale: .5;
+    }
 }
 
 @keyframes spin {
